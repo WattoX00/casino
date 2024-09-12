@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette Table</title>
+    <link rel="stylesheet" href="roulette.css">
+</head>
+<body>
+    <a href="index.html">
+        <button id="backToMenu">Back to Main Menu</button>
+    </a>
+<div class="container">
+    <div id="balance-display">Balance: $10000</div>
+
+<div class="roulette-table" id="rouletteTable">
+    <div class="row">
+    </div>
+
+    <div class="row">
+        <div class="cell fill" class="fill"></div>
+        <div class="cell red" data-number="3">3</div>
+        <div class="cell black" data-number="6">6</div>
+        <div class="cell red" data-number="9">9</div>
+        <div class="cell red" data-number="12">12</div>
+        <div class="cell black" data-number="15">15</div>
+        <div class="cell red" data-number="18">18</div>
+        <div class="cell red" data-number="21">21</div>
+        <div class="cell black" data-number="24">24</div>
+        <div class="cell red" data-number="27">27</div>
+        <div class="cell red" data-number="30">30</div>
+        <div class="cell black" data-number="33">33</div>
+        <div class="cell red" data-number="36">36</div>
+        <div class="cell bet-2to1" data-bet-type="2to1-3">2to1</div>
+    </div>
+
+    <div class="row">
+        <div class="cell zero" data-number="0" class="mid">0</div>
+        <div class="cell black" data-number="2">2</div>
+        <div class="cell red" data-number="5">5</div>
+        <div class="cell black" data-number="8">8</div>
+        <div class="cell black" data-number="11">11</div>
+        <div class="cell red" data-number="14">14</div>
+        <div class="cell black" data-number="17">17</div>
+        <div class="cell black" data-number="20">20</div>
+        <div class="cell red" data-number="23">23</div>
+        <div class="cell black" data-number="26">26</div>
+        <div class="cell black" data-number="29">29</div>
+        <div class="cell red" data-number="32">32</div>
+        <div class="cell black" data-number="35">35</div>
+        <div class="cell bet-2to1" data-bet-type="2to1-2">2to1</div>
+    </div>
+    <div class="row">
+        <div class="cell fill" class="fill"></div>
+        <div class="cell red" data-number="1">1</div>
+        <div class="cell black" data-number="4">4</div>
+        <div class="cell red" data-number="7">7</div>
+        <div class="cell black" data-number="10">10</div>
+        <div class="cell black" data-number="13">13</div>
+        <div class="cell red" data-number="16">16</div>
+        <div class="cell red" data-number="19">19</div>
+        <div class="cell black" data-number="22">22</div>
+        <div class="cell red" data-number="25">25</div>
+        <div class="cell black" data-number="28">28</div>
+        <div class="cell black" data-number="31">31</div>
+        <div class="cell red" data-number="34">34</div>
+        <div class="cell bet-2to1" data-bet-type="2to1-1">2to1</div>
+    </div>
+    <div class="row">
+        <div data-bet-type="first-12" class="cell first-12">1st 12</div>
+        <div data-bet-type="second-12" class="cell second-12">2nd 12</div>
+        <div data-bet-type="third-12" class="cell third-12">3rd 12</div>
+    </div>
+    <div class="row">
+        <div class="cell oneto" data-bet-type="oneto">1 to 18</div>
+        <div class="cell even" data-bet-type="even">Even</div>
+        <div class="cell redc" data-bet-type="redc">Red</div>
+        <div class="cell blackc" data-bet-type="blackc">Black</div>
+        <div class="cell odd" data-bet-type="odd">Odd</div>
+        <div class="cell nineteento" data-bet-type="nineteento">19 to 36</div>
+    </div>
+</div>
+  
+    <div class="chips-container">
+        <h3>Select Chip</h3>
+        <div class="chip" data-value="10">$10</div>
+        <div class="chip" data-value="50">$50</div>
+        <div class="chip" data-value="100">$100</div>
+        <div class="chip" data-value="500">$500</div>
+    </div>
+
+    <button class="roulette-button" onclick="spinRoulette()">Spin Roulette</button>
+    
+    <div class="result" id="result">No bets placed yet.</div>
+</div>
+
+<script src="roulette.js"></script>
+
+</body>
+</html>

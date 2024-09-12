@@ -1,0 +1,214 @@
+body {
+    background-color: #1c1c1c;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.slot-machine {
+    border: 5px solid #4CAF50;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: border-glow 2s linear infinite;
+}
+
+@keyframes border-glow {
+    0% {
+        box-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50, 0 0 30px #4CAF50, 0 0 40px #4CAF50;
+    }
+    50% {
+        box-shadow: 0 0 20px #4CAF50, 0 0 30px #4CAF50, 0 0 40px #4CAF50, 0 0 50px #4CAF50;
+    }
+    100% {
+        box-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50, 0 0 30px #4CAF50, 0 0 40px #4CAF50;
+    }
+}
+
+.reels {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.reel {
+    font-size: 96px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    border-radius: 5px;
+    border: 2px solid #4CAF50;
+    overflow: hidden;
+    position: relative;
+}
+
+.reel-content {
+    position: absolute;
+    width: 100%;
+}
+
+#spinButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 40px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    z-index: 10000;
+}
+
+#spinButton:hover {
+    background-color: #45a049;
+}
+
+
+.bet-controls {
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bet-btn {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.bet-btn:hover {
+    background-color: #45a049;
+}
+
+@keyframes win-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.win {
+    animation: win-animation 1s ease-in-out infinite;
+}
+
+.controls {
+    position: absolute;
+    bottom: 20px;
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bet-controls {
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bet-btn {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.bet-btn:hover {
+    background-color: #45a049;
+}
+
+.controls p {
+    font-size: 28px;
+    margin-top: 10px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #4CAF50, #66bb6a);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+}
+
+.betAmount {
+    font-size: 32px;
+    font-weight: bold;
+    background: #333;
+    color: #4CAF50;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#gameOverMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f44336;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 1000;
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#winMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    font-size: 50px;
+    font-weight: bold;
+    z-index: 1000;
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#backToMenu {
+    padding: 15px 50px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #1abc9c;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

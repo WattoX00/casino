@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Selector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="svg-container">
+        <svg viewBox="0 0 800 200" class="title-svg">
+            <path id="curve" d="M 50 150 Q 400 0 750 150" fill="transparent" />
+            <text width="800">
+                <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="svg-title">
+                    Wattox House
+                </textPath>
+            </text>
+        </svg>
+    </div>
+  <center><div id="fade-in-text" class="fade-in-container">
+    Select Your Game
+</div></center>
+
+<nav class="menu">
+    <ul id="menu-list">
+        <li class="menu-item"><a href="slot.html">Slot 🎰</a></li>
+        <li class="menu-item"><a href="dice.html">Dice 🎲</a></li>
+        <li class="menu-item"><a href="roulette.html">Roulette 🟩<br><span class="soon"z>BETA</span></a></li>
+        <li class="menu-item"><a href="#">Poker 🃏<br><span class="soon">COMING SOON</span></a></li>
+    </ul>
+</nav>
+</div>
+    
+<center>
+    <p id="balance-display">Balance: $0</p>
+    <div id="resetBalance">Reset Game</div>
+</center>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const textContainer = document.getElementById('fade-in-text');
+    const text = textContainer.innerText;
+    textContainer.innerHTML = '';
+
+    for (let i = 0; i < text.length; i++) {
+        const span = document.createElement('span');
+        span.innerText = text[i];
+        span.style.opacity = 0;
+        span.style.display = 'inline-block';
+        span.style.animation = `fadeIn 0.5s ease forwards`;
+        span.style.animationDelay = `${i * 0.1}s`;
+        textContainer.appendChild(span);
+    }
+});
+
+        if (!localStorage.getItem('balance')) {
+            localStorage.setItem('balance', '10000');
+        }
+        document.getElementById('balance-display').textContent = "Balance: $" + localStorage.getItem('balance');
+        document.getElementById("resetBalance").addEventListener("click", () => {
+    localStorage.setItem('balance', 10000);
+    location.reload();
+});
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="slot.css">
+</head>
+<body>
+    <a href="index.html">
+        <button id="backToMenu">Back to Main Menu</button>
+    </a>
+    
+    <div class="slot-machine">
+        <div class="reels">
+            <div class="reel" id="reel1"></div>
+            <div class="reel" id="reel2"></div>
+            <div class="reel" id="reel3"></div>
+        </div>
+        <button id="spinButton">Spin</button>
+    </div>
+
+    <div class="controls">
+        <div class="bet-controls">
+            <button class="bet-btn" data-bet="-1000">-1000</button>
+            <button class="bet-btn" data-bet="-500">-500</button>
+            <button class="bet-btn" data-bet="-200">-200</button>
+            <button class="bet-btn" data-bet="-50">-50</button>
+            <button class="bet-btn" data-bet="-10">-10</button>
+            <span class="betAmount">Bet: <span id="betAmount">10</span></span>
+            <button class="bet-btn" data-bet="10">+10</button>
+            <button class="bet-btn" data-bet="50">+50</button>
+            <button class="bet-btn" data-bet="200">+200</button>
+            <button class="bet-btn" data-bet="500">+500</button>
+            <button class="bet-btn" data-bet="1000">+1000</button>
+        </div>
+        <p>Balance: <span id="balance">1000</span></p>
+    </div>
+    <div id="gameOverMessage" class="hidden">
+        <p>Game over! Go back to the menu!</p>
+    </div>
+    <div id="winMessage" class="hidden">
+        <p id="winText"></p>
+    </div>
+
+    <script src="slot.js"></script>
+</body>
+</html>

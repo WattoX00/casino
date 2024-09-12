@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game with Betting</title>
+    <link rel="stylesheet" href="dice.css">
+</head>
+<body>    
+<a href="index.html">
+    <button id="backToMenu">Back to Main Menu</button>
+</a>
+    <div class="game-container">
+        <h1>Dice Game</h1>
+
+        <div class="dice-container">
+            <img id="dice" class="dice" src="dice1.svg" alt="Dice" />
+        </div>
+
+        <div class="result" id="result">Place your bet and roll the dice!</div>
+
+        <div class="betting-container">
+            <div class="balance">
+                Current Balance: $<span id="balance">100</span>
+            </div>
+
+            <div class="bet-form">
+                <label for="betAmount">Bet Amount:</label>
+                <input type="number" id="betAmount" value="10" min="1" max="100" />
+
+                <label for="betType">Bet Type:</label>
+                <select id="betType">
+                    <option value="even">Even</option>
+                    <option value="odd">Odd</option>
+                    <option value="1">Number 1</option>
+                    <option value="2">Number 2</option>
+                    <option value="3">Number 3</option>
+                    <option value="4">Number 4</option>
+                    <option value="5">Number 5</option>
+                    <option value="6">Number 6</option>
+                </select>
+
+                <button id="rollButton">Place Bet & Roll!</button>
+            </div>
+        </div>
+    </div>
+<div id="winMessage" class="hidden">
+    <p id="winText"></p>
+</div>
+
+    <script src="dice.js"></script>
+</body>
+</html>
