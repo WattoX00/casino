@@ -1,4 +1,4 @@
-const symbols = ["🍒", "🍋", "🍇", "💎", "💲"];
+const symbols = ["🍒", "🍋", "🍇", "💎"];
 
 const reel1 = document.getElementById("reel1");
 const reel2 = document.getElementById("reel2");
@@ -97,7 +97,7 @@ function checkWin() {
     balance -= betAmount;
 
     if (symbol1 === symbol2 && symbol2 === symbol3) {
-        const winAmount = betAmount * 5;
+        const winAmount = betAmount * 10;
         balance += winAmount;
 
         let winMessageText = `You won ${winAmount}! `;

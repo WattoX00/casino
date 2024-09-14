@@ -74,7 +74,7 @@ function calculateWinnings(betAmount, betType) {
     if (betType === "even" || betType === "odd") {
         return betAmount * 2; 
     } else {
-        return betAmount * 6;
+        return betAmount * 5;
     }
 }
 

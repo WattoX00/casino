@@ -86,25 +86,17 @@ function placeBetOnDozen(betType) {
         return;
     }
 
-    balance -= selectedChip;
-    localStorage.setItem('balance', balance);
-    balanceDisplay.textContent = "Balance: $" + balance;
-
     bets['dozen'][betType] += selectedChip;
 
     const cell = document.querySelector(`.cell[data-bet-type='${betType}']`);
     displayChipOverlay(cell, bets['dozen'][betType]);
 }
 
-// Function to place bet on other outside bets (oneto, even, black, red, odd, nineteento)
 function placeBetOnOther(betType) {
     if (balance < selectedChip) {
         alert("Insufficient balance!");
         return;
     }
-
-    balance -= selectedChip;
-    balanceDisplay.textContent = balance;
 
     bets['other'][betType] += selectedChip;
 
@@ -117,10 +109,6 @@ function placeBetOnNumber(number) {
         alert("Insufficient balance!");
         return;
     }
-
-    balance -= selectedChip;
-    localStorage.setItem('balance', balance);
-    balanceDisplay.textContent = "Balance: $" + balance;
 
     if (!bets.numbers[number]) {
         bets.numbers[number] = 0;
@@ -137,10 +125,6 @@ function placeBetOn2to1(betType) {
         alert("Insufficient balance!");
         return;
     }
-
-    balance -= selectedChip;
-    localStorage.setItem('balance', balance);
-    balanceDisplay.textContent = "Balance: $" + balance;
 
     bets['2to1'][betType] += selectedChip;
 
