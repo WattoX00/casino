@@ -79,7 +79,7 @@ animation: highlight2 2s infinite;
 #betAmount {
 padding: 10px 20px;
 font-size: 18px;
-background-color: rgb(124, 102, 83);
+background-color: #fff;
 border: none;
 color: white;
 cursor: pointer;
