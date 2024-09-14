@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slot Machine</title>
+  <link rel="stylesheet" href="big_slot.css">
+</head>
+<body>
+    <a href="index.html">
+        <button id="backToMenu">Back to Main Menu</button>
+    </a>
+  <div class="slot-machine">
+    <div id="slots" class="grid">
+    </div>
+    <div class="controls">
+      <input type="number" id="betAmount" value="10" min="1" max="1000" placeholder="Enter your bet">
+      <button id="spinButton">Spin</button>
+    </div>
+    <div class="results">
+      <p id="resultText">Press Spin to play!</p>
+      <p id="payoutText"></p>
+      <p><span id="balance">1000</span></p>
+    </div>
+  </div>
+  <script src="big_slot.js"></script>
+</body>
+</html>

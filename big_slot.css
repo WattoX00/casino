@@ -1,0 +1,144 @@
+body {
+font-family: Arial, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: #1a1a1d;
+color: #ffffff;
+margin: 0;
+}
+
+.slot-machine {
+text-align: center;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(5, 100px);
+grid-template-rows: repeat(3, 100px);
+gap: 10px;
+margin: 20px auto;
+}
+
+.grid div {
+background-color: rgb(124, 102, 83);
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 24px;
+color: #333;
+border-radius: 8px;
+border: 2px solid #444;
+}
+
+.controls {
+margin-top: 20px;
+}
+
+.controls button {
+padding: 10px 20px;
+margin-left: 10px;
+font-size: 16px;
+cursor: pointer;
+}
+
+.results {
+margin-top: 20px;
+padding: 10px;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#resultText {
+font-size: 18px;
+font-weight: bold;
+color: #1abc9c;
+}
+#spinButton {
+background-color: #4CAF50;
+color: white;
+padding: 20px 40px;
+font-size: 24px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+margin-top: 20px;
+z-index: 10000;
+}
+
+#spinButton:hover {
+background-color: #45a049;
+}
+
+#payoutText {
+font-size: 35px;
+font-weight: bold;
+animation: highlight2 2s infinite;
+}
+
+#betAmount {
+padding: 10px 20px;
+font-size: 18px;
+background-color: rgb(124, 102, 83);
+border: none;
+color: white;
+cursor: pointer;
+border-radius: 5px;
+}
+
+@keyframes highlight2 {
+0% {
+    transform: scale(1);
+}
+50% {
+    transform: scale(1.1);
+}
+100% {
+    transform: scale(1);
+}
+}
+
+#balance {
+font-size: 24px;
+font-weight: bold;
+}
+@keyframes highlight {
+0% {
+    background-color: #ffcc00;
+    transform: scale(1);
+}
+50% {
+    background-color: #ff6600;
+    transform: scale(1.1);
+}
+100% {
+    background-color: #ffcc00;
+    transform: scale(1);
+}
+}
+
+.win-highlight {
+animation: highlight 1s ease-in-out infinite;
+}
+.spinning {
+animation: spin 0.05s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: translateY(0); }
+100% { transform: translateY(-100%); }
+}
+
+#backToMenu {
+position: absolute;
+top: 10px;
+left: 10px;
+padding: 15px 50px;
+font-size: 18px;
+border: none;
+border-radius: 10px;
+background-color: #1abc9c;
+color: white;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
