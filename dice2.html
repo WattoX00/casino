@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stake Original Dice Game</title>
+    <link rel="stylesheet" href="dice2.css">
+</head>
+<body>
+    
+<a href="index.html">
+    <button id="backToMenu">Back to Main Menu</button>
+</a>
+    <div class="game-container">
+        <div class="game-area">
+            <div class="dice-result-area">
+                <div class="dice-roll" id="dice-number">-</div>
+            </div>
+
+            <div class="slider-container">
+                <input type="range" min="1" max="100" value="50" class="slider" id="roll-slider">
+                <div class="slider-track">
+                    <div class="win-area" id="win-track"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bet-section">
+            <div class="bet-info">
+                <p>Balance: <span id="balance">1000</span></p>
+                <p>Bet Amount: <input type="number" id="bet-amount" value="10" min="1"></p>
+            </div>
+
+            <div class="payout-info">
+                <p>Chance to Win: <span id="win-chance">50%</span></p>
+                <p>Payout Multiplier: <span id="payout-multiplier">2.00x</span></p>
+                <p>Estimated Payout: <span id="estimated-payout">20.00</span></p>
+            </div>
+
+            <button id="roll-dice">Place Bet</button>
+
+            <div class="last-rolls">
+                <h3>Last 5 Rolls</h3>
+                <ul id="last-rolls-list"></ul>
+            </div>
+
+            <div class="last-result">
+                <p>Last Roll Result: <span id="last-result-amount">-</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="dice2.js"></script>
+</body>
+</html>
