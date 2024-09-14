@@ -1,4 +1,4 @@
-const symbols = ['🌵', '🤠', '🌅', '🐎', '🐍', '🦂', '🏜️', '🔫', '💥', '💰', '🦅', '🐴', '❌'];
+const symbols = ['🌵', '🤠', '🌅', '🐎', '🐍', '🦂', '🏜️', '🔫', '💥', '💰', '🦅', '🐴', '🍀', '❌'];
 const grid = document.getElementById('slots');
 const betInput = document.getElementById('betAmount');
 const resultText = document.getElementById('resultText');
@@ -97,7 +97,7 @@ function calculatePayout(matrix, bet) {
         const { count, positions } = symbolCount[symbol];
 
         if (count >= 3) {
-            const symbolPayout = (count * 0.25 * bet);
+            const symbolPayout = (count * 0.2 * bet);
             totalPayout += symbolPayout;
             winningTiles.push(...positions);
 
@@ -106,7 +106,7 @@ function calculatePayout(matrix, bet) {
     }
 
     if (hasMultiplier) {
-        const multiplierValue = Math.floor(Math.random() * 3) + 2;
+        const multiplierValue = Math.floor(Math.random() * 2) + 2;
         totalPayout *= multiplierValue;
         resultText.textContent += ` Multiplier applied: ${multiplierValue}x!`;
     }
