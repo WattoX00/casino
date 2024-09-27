@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 const symbols = ["🍒", "🍋", "🍇", "💎"];
 
 const reel1 = document.getElementById("reel1");
@@ -126,8 +127,23 @@ function checkWin() {
     spinButton.disabled = false;
 
     if (balance <= 0) {
-        spinButton.disabled = true;
-        gameOverMessage.style.display = 'block';
+        const modal = document.getElementById('myModal');
+        modal.style.display = 'block';
+
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+        const closeModalButton = document.getElementsByClassName('close')[0];
+        closeModalButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                modal.style.display = 'none';
+            }
+        });
     }
 }
 
@@ -144,3 +160,4 @@ function animateWin() {
 }
 
 spinButton.addEventListener("click", spinReels);
+})
