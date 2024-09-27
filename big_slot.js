@@ -1,4 +1,5 @@
-const symbols = ['🌵', '🤠', '🌅', '🐎', '🐍', '🦂', '🏜️', '🔫', '💥', '💰', '🦅', '🐴', '🍀', '❌'];
+document.addEventListener('DOMContentLoaded', () => {
+const symbols = ['🌵', '🤠', '🌅', '🐎', '🐍', '🦂', '🏜️', '🔫', '💥', '💰', '🦅', '🐴', '🍀', '🎲', '🐱‍👤', '❌'];
 const grid = document.getElementById('slots');
 const betInput = document.getElementById('betAmount');
 const resultText = document.getElementById('resultText');
@@ -28,7 +29,23 @@ function spin() {
         return;
     }
     if (bet > currentBalance) {
-        resultText.textContent = "Insufficient balance.";
+        const modal = document.getElementById('myModal');
+        modal.style.display = 'block';
+
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+        const closeModalButton = document.getElementsByClassName('close')[0];
+        closeModalButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                modal.style.display = 'none';
+            }
+        });
         return;
     }
 
@@ -134,3 +151,4 @@ function highlightWinningTiles(winningTiles) {
 }
 
 spinButton.addEventListener('click', spin);
+})
