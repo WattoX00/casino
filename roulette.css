@@ -245,3 +245,50 @@ body {
 
 
 }
+a {
+    text-decoration: none;
+    color: white;
+}
+.big {
+    font-size: 37px;
+}
+.small {
+    font-size: 10px;
+}
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.2);
+}
+.modal-content {
+    z-index: 4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    min-width: 400px;
+    background-color: rgb(36, 39, 41);
+    font-size: 24px;
+    font-weight: bold;
+}
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}

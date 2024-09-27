@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 let selectedChip = 10;
 let balance = localStorage.getItem('balance') ? parseInt(localStorage.getItem('balance'), 10) : 10000; // Default to 10000 if not set
 
@@ -82,7 +83,23 @@ document.querySelectorAll(".roulette-table .cell").forEach(cell => {
 
 function placeBetOnDozen(betType) {
     if (balance < selectedChip) {
-        alert("Insufficient balance!");
+        const modal = document.getElementById('myModal');
+        modal.style.display = 'block';
+
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+        const closeModalButton = document.getElementsByClassName('close')[0];
+        closeModalButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                modal.style.display = 'none';
+            }
+        });
         return;
     }
 
@@ -94,7 +111,23 @@ function placeBetOnDozen(betType) {
 
 function placeBetOnOther(betType) {
     if (balance < selectedChip) {
-        alert("Insufficient balance!");
+        const modal = document.getElementById('myModal');
+        modal.style.display = 'block';
+
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+        const closeModalButton = document.getElementsByClassName('close')[0];
+        closeModalButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                modal.style.display = 'none';
+            }
+        });
         return;
     }
 
@@ -106,7 +139,23 @@ function placeBetOnOther(betType) {
 
 function placeBetOnNumber(number) {
     if (balance < selectedChip) {
-        alert("Insufficient balance!");
+        const modal = document.getElementById('myModal');
+        modal.style.display = 'block';
+
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+        const closeModalButton = document.getElementsByClassName('close')[0];
+        closeModalButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                modal.style.display = 'none';
+            }
+        });
         return;
     }
 
@@ -122,7 +171,23 @@ function placeBetOnNumber(number) {
 
 function placeBetOn2to1(betType) {
     if (balance < selectedChip) {
-        alert("Insufficient balance!");
+        const modal = document.getElementById('myModal');
+        modal.style.display = 'block';
+
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+        const closeModalButton = document.getElementsByClassName('close')[0];
+        closeModalButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                modal.style.display = 'none';
+            }
+        });
         return;
     }
 
@@ -229,3 +294,4 @@ function spinRoulette() {
 
     document.querySelectorAll(".chip-overlay").forEach(overlay => overlay.remove());
 }
+})
