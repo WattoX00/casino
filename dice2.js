@@ -31,7 +31,6 @@ function updateBalance(newBalance) {
     document.getElementById('balance').textContent = balance.toFixed(2);
 }
 
-// Roll Dice function modified to use localStorage for balance
 function rollDice() {
     const betAmount = parseFloat(document.getElementById('bet-amount').value);
     const rollUnder = parseInt(document.getElementById('roll-slider').value);
@@ -64,7 +63,7 @@ function rollDice() {
     let payout = 0;
     if (diceRoll < rollUnder) {
         payout = (100 / rollUnder) * betAmount;
-        balance += payout;
+        balance += payout-betAmount;
         updateLastRoll(diceRoll, true);
         lastResultAmount = payout;
     } else {
@@ -73,7 +72,6 @@ function rollDice() {
         lastResultAmount = -betAmount;
     }
 
-    // Update balance in localStorage
     updateBalance(balance);
 
     document.getElementById('last-result-amount').textContent = `${lastResultAmount > 0 ? "+" : ""}${lastResultAmount.toFixed(2)}`;
@@ -85,23 +83,18 @@ function moveDiceRoll(diceRoll) {
     const diceResultElement = document.getElementById('dice-number');
     const slider = document.getElementById('roll-slider');
     
-    // Calculate the exact width of the slider
     const sliderWidth = slider.offsetWidth;
     
-    // Calculate the position in percentage, ensuring it's within bounds
     const positionPercentage = diceRoll / 100;
     
-    // Set the dice position based on the percentage of the slider width
     let leftPosition = positionPercentage * sliderWidth;
     
-    // Ensure the dice does not overflow the slider
     if (leftPosition < 0) {
         leftPosition = 0;
     } else if (leftPosition > sliderWidth - diceResultElement.offsetWidth) {
         leftPosition = sliderWidth - diceResultElement.offsetWidth;
     }
 
-    // Update dice position
     diceResultElement.style.left = `${leftPosition}px`;
 }
 
