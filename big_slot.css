@@ -151,41 +151,87 @@ a {
 }
 .small {
     font-size: 10px;
-}
+}/* The Modal container */
 .modal {
-    display: none; 
-    position: fixed;
-    z-index: 2;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.2);
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
 }
+
+/* Modal content box */
 .modal-content {
-    z-index: 4;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background: linear-gradient(145deg, #fefefe, #e9e9e9);
+    margin: 15% auto; /* Center it */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    width: 80%; /* Adjust width as needed */
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-out;
     text-align: center;
-    min-width: 400px;
-    background-color: rgb(36, 39, 41);
-    font-size: 24px;
-    font-weight: bold;
 }
+
+/* Animation for the modal content */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Close button */
 .close {
-    float: right;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 .close:hover,
 .close:focus {
+    color: #ff5e57;
+}
+
+/* Modal body styles */
+.modal-body h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.modal-body p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+/* Button style */
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
     text-decoration: none;
-    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
 }
